@@ -29,9 +29,21 @@ namespace Parks.Controllers
     /// <summary>
     /// This will create a single park
     /// </summary>
-    /// <param name="park"></param>
-    /// <returns>Park</returns>
-  // POST api/parks
+    /// <remarks>
+    /// Sample request:
+    /// 
+    ///     POST api/parks
+    ///     {        
+    ///       
+    ///       "Name" : "Olympic National Park",
+    ///       "State" : "Washington",
+    ///       "City" : "Port Angles",
+    ///       "ZipCode" : 98362,
+    ///       "Type" : "National"      
+    ///     }
+    ///    </remarks> 
+    
+  
     [HttpPost]
     public async Task<ActionResult<Park>> Post(Park park)
     {
@@ -43,7 +55,9 @@ namespace Parks.Controllers
       
       return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);
     }
-    // GET api/parks
+    /// <summary>
+    /// This will get all parks
+    /// </summary>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string state, string city, string type, string zipcode, string radius)
     {
@@ -76,7 +90,9 @@ namespace Parks.Controllers
     }
    
 
-    // Get individual park with id ap/parks/id
+    /// <summary>
+    /// This will get a single park with id
+    /// </summary>
     [HttpGet("{id}")]
     public async Task<ActionResult<Park>> GetPark(int id)
     {
@@ -91,7 +107,22 @@ namespace Parks.Controllers
   }
 
    
-    // PUT: api/Parks/5
+    /// <summary>
+    /// This will update a single park
+    /// </summary>
+    /// <remarks>
+    /// Sample request:
+    /// 
+    ///     PUT api/parks/1
+    ///     {        
+    ///       
+    ///       "Name" : "Olympic National Park",
+    ///       "State" : "Washington",
+    ///       "City" : "Port Angles",
+    ///       "ZipCode" : 98362,
+    ///       "Type" : "National"      
+    ///     }
+    ///    </remarks> 
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Park park)
     {
@@ -120,7 +151,9 @@ namespace Parks.Controllers
 
       return NoContent();
     }
-       // DELETE: api/Parks/5
+    /// <summary>
+    /// This will delete a single park with id
+    /// </summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePark(int id)
     {
