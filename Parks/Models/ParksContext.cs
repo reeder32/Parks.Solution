@@ -27,7 +27,7 @@ namespace Parks.Models
           Name = "Olympic National Park",
           State = "Washington",
           City = "Port Angeles",
-          ZipCode = "98362",
+          ZipCode = 98362,
           Type = "National"
         });
     }

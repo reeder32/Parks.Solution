@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System;
 using Parks.Models;
 
 namespace Parks.Controllers
@@ -40,9 +41,34 @@ namespace Parks.Controllers
     }
     // GET api/parks
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Park>>> Get()
+    public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string state, string city, string type, string zipcode, string radius)
     {
-      return await _db.Parks.ToListAsync();
+      var query = _db.Parks.AsQueryable();
+      if (name != null)
+      {
+        query = query.Where(p => p.Name == name);
+      }
+       if (state != null)
+      {
+        query = query.Where(p => p.State.Contains(state));
+      }
+       if (city != null)
+      {
+        query = query.Where(p => p.City == city);
+      }
+       if (type != null)
+      {
+        query = query.Where(p => p.Type == type);
+      }
+       if (zipcode != null && radius != null)
+      {
+        int zipCodeInt = Int32.Parse(zipcode);
+        int radiusInt = Int32.Parse(radius);
+        int lowerZip = zipCodeInt - radiusInt;
+        int upperZip = zipCodeInt + radiusInt;
+        query = query.Where(p => p.ZipCode >= lowerZip && p.ZipCode <= upperZip);
+      }
+      return await query.ToListAsync();
     }
    
 
