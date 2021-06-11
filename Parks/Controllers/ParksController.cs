@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System;
-using System.ComponentModel.DataAnnotations;
 using Parks.Models;
 
 namespace Parks.Controllers
