@@ -20,21 +20,31 @@ namespace Parks.Controllers
     {
       return _db.Parks.Any(e => e.ParkId == id);
     }
+
+    private bool ParkWithAttributesExists(Park p)
+    {
+      return _db.Parks.Any(e => e.Name == p.Name && e.State == p.State && e.City == p.City && e.ZipCode == p.ZipCode);
+    }
+
+      // POST api/parks
+    [HttpPost]
+    public async Task<ActionResult<Park>> Post(Park park)
+    {
+      if (!ParkWithAttributesExists(park))
+      {
+        _db.Parks.Add(park);
+        await _db.SaveChangesAsync();
+      }
+      
+      return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);
+    }
     // GET api/parks
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Park>>> Get()
     {
       return await _db.Parks.ToListAsync();
     }
-     // POST api/parks
-    [HttpPost]
-    public async Task<ActionResult<Park>> Post(Park park)
-    {
-      _db.Parks.Add(park);
-      await _db.SaveChangesAsync();
-
-      return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);
-    }
+   
 
     // Get individual park with id ap/parks/id
     [HttpGet("{id}")]
