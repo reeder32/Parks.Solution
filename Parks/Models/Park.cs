@@ -3,6 +3,9 @@ namespace Parks.Models
 {
   public class Park
   {
+    /// <summary>  
+    /// Park id  
+    /// </summary> 
     public int ParkId { get; set; }
      [Required]
     public string Name { get; set; }
