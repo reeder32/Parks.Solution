@@ -47,6 +47,7 @@ namespace Parks.Controllers
     [HttpPost]
     public async Task<ActionResult<Park>> Post(Park park)
     {
+      Console.WriteLine($"Post: {park.Name}");
       if (!ParkWithAttributesExists(park))
       {
         _db.Parks.Add(park);
@@ -61,6 +62,7 @@ namespace Parks.Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string state, string city, string type, string zipcode, string radius)
     {
+     
       var query = _db.Parks.AsQueryable();
       if (name != null)
       {
@@ -72,7 +74,7 @@ namespace Parks.Controllers
       }
        if (city != null)
       {
-        query = query.Where(p => p.City == city);
+        query = query.Where(p => p.City.Contains(city));
       }
        if (type != null)
       {

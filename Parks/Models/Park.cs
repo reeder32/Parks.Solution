@@ -12,7 +12,7 @@ namespace Parks.Models
     [Required]
     [StringLength(20, ErrorMessage = "Come on now! A City needs to be at least 3 letters long", MinimumLength = 3)]
     public string City {get; set; }
-    [Range(5,5, ErrorMessage = "Zip Code needs to be 5 characters long")]
+    
     public int ZipCode {get; set; }
     [Required]
     public string Type {get; set; }
