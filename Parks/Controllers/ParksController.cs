@@ -26,8 +26,7 @@ namespace Parks.Controllers
     {
       return _db.Parks.Any(e => e.Name == p.Name && e.State == p.State && e.City == p.City && e.ZipCode == p.ZipCode);
     }
-
-      // POST api/parks
+  // POST api/parks
     [HttpPost]
     public async Task<ActionResult<Park>> Post(Park park)
     {
