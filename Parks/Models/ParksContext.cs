@@ -16,16 +16,20 @@ namespace Parks.Models
         {
            
         }
-
         public DbSet<Park> Parks { get; set; }
-
-    
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-
-      
-   
-
+      builder.Entity<Park>()
+      .HasData(
+        new Park
+        {
+          ParkId = 1,
+          Name = "Olympic National Park",
+          State = "Washington",
+          City = "Port Angeles",
+          ZipCode = "98362",
+          Type = "National"
+        });
     }
     }
 }
