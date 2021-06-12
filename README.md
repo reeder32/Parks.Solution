@@ -28,7 +28,7 @@ git clone https://github.com/reeder32/Parks.Solution.git
 ##### Open in VS Code
 
 ```sh
-cd PierresBakery.Solution
+cd Parks.Solution
 code .
 ```
 
@@ -63,7 +63,7 @@ dotnet ef database update
 #### Start Server
 
 ```sh
-cd PierresBakery
+cd Parks
 dotnet run
 ```
 
