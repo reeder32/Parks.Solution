@@ -119,6 +119,10 @@ dotnet run
   - Method: Delete
   - http://localhost:5000/api/parks/{id}
 
+#### You can also view and test api online
+
+[Swagger](http://localhost:5000/swagger)
+
 ## License
 
 [MIT License](https://opensource.org/licenses/MIT)
