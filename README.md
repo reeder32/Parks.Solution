@@ -82,8 +82,9 @@ dotnet run
   - http://localhost:5000/api/parks/{id}
 
 - Post a new park
-  ** Method: POST
-  ** http://localhost:5000/api/parks
+
+  - Method: POST
+  - http://localhost:5000/api/parks
 
   _pass in body, json object like this:_
 
