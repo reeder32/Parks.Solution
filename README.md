@@ -83,7 +83,8 @@ dotnet run
 
 - Post a new park
   ** Method: POST
-  ** http://localhost:5000/api/parks \* pass in body, json object like this:
+  ** http://localhost:5000/api/parks
+  _pass in body, json object like this:_
 
 ```sh
 {
@@ -98,7 +99,7 @@ dotnet run
 - Update park
   - Method: PUT
   - http://localhost:5000/api/parks/{id}
-    \*pass in body, json object like this:
+    _pass in body, json object like this:_
 
 ```sh
 {
