@@ -47,7 +47,6 @@ namespace Parks.Controllers
     [HttpPost]
     public async Task<ActionResult<Park>> Post(Park park)
     {
-      Console.WriteLine($"Post: {park.Name}");
       if (!ParkWithAttributesExists(park))
       {
         _db.Parks.Add(park);
