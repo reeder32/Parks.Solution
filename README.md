@@ -72,12 +72,14 @@ dotnet run
 1. Open [Postman](https://www.postman.com/downloads/)
 
 - Get all Parks
-  ** Method: GET
-  ** http://localhost:5000/api/parks
+
+  - Method: GET
+  - http://localhost:5000/api/parks
 
 - Get Park by id
-  ** Method: GET
-  ** http://localhost:5000/api/parks/{id}
+
+  - Method: GET
+  - http://localhost:5000/api/parks/{id}
 
 - Post a new park
   ** Method: POST
@@ -95,9 +97,9 @@ dotnet run
 ```
 
 - Update park
-  ** Method: PUT
-  ** http://localhost:5000/api/parks/{id}
-  \*\*\* pass in body, json object like this:
+  - Method: PUT
+  - http://localhost:5000/api/parks/{id}
+    \*\*\* pass in body, json object like this:
 
 ```sh
 {
@@ -110,8 +112,8 @@ dotnet run
 ```
 
 - Delete park
-  ** Method: Delete
-  ** http://localhost:5000/api/parks/{id}
+  - Method: Delete
+  - http://localhost:5000/api/parks/{id}
 
 ## License
 
