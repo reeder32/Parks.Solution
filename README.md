@@ -76,6 +76,17 @@ dotnet run
   - Method: GET
   - http://localhost:5000/api/parks
 
+- You can also search for parks with a query!
+
+  - Method: GET
+  - http://localhost:5000/api/parks?
+
+  * name={string}
+  * type={string} - must be national or state
+  * city={string}
+  * state={string}
+  * zipcode={int}&radius={int} - zipcode must be 5 numbers long, and radius is based on nearest zipcodes
+
 - Get Park by id
 
   - Method: GET
